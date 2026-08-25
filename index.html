@@ -190,7 +190,8 @@
         <div class="product-details">
           <div class="sub-unit"><strong>முக்கால் ஜல்லி</strong><br><span class="product-price" style="font-size:1rem;">₹ 5,500 - 6,000</span></div>
           <div class="sub-unit"><strong>ஒன்றரை ஜல்லி</strong><br><span class="product-price" style="font-size:1rem;">₹ 5,500 - 6,000</span></div>
-          <div class="sub-unit"><strong>அரை ஜல்லி & Chips</strong><br><span class="product-price" style="font-size:1rem;">₹ 5,800 - 6,000</span></div>
+          <div class="sub-unit"><strong>அரை ஜல்லி</strong><br><span class="product-price" style="font-size:1rem;">₹ 5,800 - 6,000</span></div>
+          <div class="sub-unit"><strong>Chips</strong><br><span class="product-price" style="font-size:1rem;">₹ 5,800 - 6,000</span></div>
           <div class="note">தூரத்தைப் பொறுத்து விலை மாறும்</div>
           <div class="order-box">
             <div class="order-note">உறுதி செய்து விட்டு ஆர்டர் செய்யவும் மற்றும் ஆர்டர் செய்த பிறகு எங்களிடம் இருந்து வரும் தொலைபேசி அழைப்பை தவறாமல் எடுக்கவும்</div>
@@ -198,7 +199,8 @@
             <select id="type-jally">
               <option value="முக்கால் ஜல்லி">முக்கால் ஜல்லி</option>
               <option value="ஒன்றரை ஜல்லி">ஒன்றரை ஜல்லி</option>
-              <option value="அரை ஜல்லி & Chips">அரை ஜல்லி & Chips</option>
+              <option value="அரை ஜல்லி">அரை ஜல்லி</option>
+              <option value="Chips">Chips</option>
             </select>
             <label>அளவு (Unit)</label>
             <select id="qty-jally">
@@ -338,7 +340,6 @@
         <div class="product-details">
           <div class="product-price">தயவுசெய்து அழைக்கவும்</div>
           <div class="note">விவரம் மற்றும் விலை அறிய அழைக்கவும்</div>
-          <!-- Order form completely removed as requested -->
         </div>
       </div>
     </div>
@@ -380,21 +381,13 @@
     return true;
   }
 
-  // ========== மிகவும் வலுவான WhatsApp Open Function ==========
   function openWhatsApp(message) {
     const phone = "918489803165";
     const encodedText = encodeURIComponent(message);
 
-    // 1. Direct WhatsApp scheme (best for most phones)
     const schemeUrl = "whatsapp://send?phone=" + phone + "&text=" + encodedText;
-
-    // 2. Android Intent - Normal WhatsApp
     const intentNormal = "intent://send?phone=" + phone + "&text=" + encodedText + "#Intent;scheme=whatsapp;package=com.whatsapp;end";
-
-    // 3. Android Intent - WhatsApp Business
     const intentBusiness = "intent://send?phone=" + phone + "&text=" + encodedText + "#Intent;scheme=whatsapp;package=com.whatsapp.w4b;end";
-
-    // 4. Web fallback
     const webUrl = "https://api.whatsapp.com/send?phone=" + phone + "&text=" + encodedText;
 
     const ua = navigator.userAgent || "";
@@ -402,28 +395,14 @@
     const isIOS = /iPhone|iPad|iPod/i.test(ua);
 
     if (isAndroid) {
-      // Try Intent methods first (strongest on Android)
       window.location.href = intentNormal;
-
-      setTimeout(function() {
-        window.location.href = intentBusiness;
-      }, 600);
-
-      setTimeout(function() {
-        window.location.href = schemeUrl;
-      }, 1200);
-
-      setTimeout(function() {
-        window.location.href = webUrl;
-      }, 2000);
-
+      setTimeout(function() { window.location.href = intentBusiness; }, 600);
+      setTimeout(function() { window.location.href = schemeUrl; }, 1200);
+      setTimeout(function() { window.location.href = webUrl; }, 2000);
     } else if (isIOS) {
       window.location.href = schemeUrl;
-      setTimeout(function() {
-        window.location.href = webUrl;
-      }, 1500);
+      setTimeout(function() { window.location.href = webUrl; }, 1500);
     } else {
-      // Desktop
       window.open(webUrl, "_blank");
     }
   }
