@@ -28,7 +28,7 @@
   .product-header .icon { font-size: 1.2rem; transition: transform 0.25s; }
   .product-item.active .product-header .icon { transform: rotate(180deg); }
   .product-body { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; background: #f8fafc; }
-  .product-item.active .product-body { max-height: 420px; }
+  .product-item.active .product-body { max-height: 480px; }
   .product-details { padding: 14px 16px 18px; }
   .product-price { color: #c0392b; font-weight: 700; font-size: 1.1rem; margin-bottom: 6px; }
   .unit { font-size: 0.9rem; color: #1a3a6e; font-weight: 600; margin-bottom: 4px; }
@@ -60,7 +60,7 @@
     📞 <a href="tel:+919994341880">+91 99943 41880</a> &nbsp;|&nbsp; <a href="tel:+918489803165">+91 84898 03165</a>
   </div>
   <div class="people">
-    <span><strong>உரிமம்:</strong> V.ராமலிங்கம், Rabil</span>
+    <span><strong>உரிமம்:</strong> V.ராமலிங்கம், ரபில்</span>
   </div>
 </div>
 
@@ -101,15 +101,25 @@
       </div>
     </div>
 
-    <!-- முக்கால் ஜல்லி -->
+    <!-- ஜல்லி (Jally) -->
     <div class="product-item">
       <div class="product-header" onclick="toggleProduct(this)">
-        முக்கால் ஜல்லி (Jally) <span class="icon">▼</span>
+        ஜல்லி (Jally) <span class="icon">▼</span>
       </div>
       <div class="product-body">
         <div class="product-details">
-          <div class="product-price">₹ 5,500 - 6,000</div>
-          <div class="unit">ஒரு யூனிட் விலை</div>
+          <div class="sub-unit">
+            <strong>முக்கால் ஜல்லி</strong><br>
+            <span class="product-price" style="font-size:1rem;">₹ 5,500 - 6,000</span>
+          </div>
+          <div class="sub-unit">
+            <strong>ஒன்றரை ஜல்லி</strong><br>
+            <span class="product-price" style="font-size:1rem;">₹ 5,500 - 6,000</span>
+          </div>
+          <div class="sub-unit">
+            <strong>அரை ஜல்லி & Chips</strong><br>
+            <span class="product-price" style="font-size:1rem;">₹ 5,800 - 6,000</span>
+          </div>
           <div class="note">தூரத்தைப் பொறுத்து விலை மாறும்</div>
         </div>
       </div>
@@ -203,7 +213,6 @@
     item.classList.toggle('active');
   }
 
-  // Basic Protection
   document.addEventListener('contextmenu', e => e.preventDefault());
   document.addEventListener('selectstart', e => e.preventDefault());
   document.addEventListener('dragstart', e => e.preventDefault());
