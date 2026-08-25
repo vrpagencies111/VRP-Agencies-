@@ -2,13 +2,11 @@
 <html lang="ta">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline'; img-src 'self' data: https:;">
-<meta name="referrer" content="no-referrer">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 <title>VRP Agencies</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-  body { background: #f0f4f8; color: #222; line-height: 1.6; -webkit-user-select: none; user-select: none; }
+  body { background: #f0f4f8; color: #222; line-height: 1.6; }
   .header { background: linear-gradient(135deg, #1a3a6e, #0d2b5e); color: white; padding: 26px 16px; text-align: center; }
   .brand { display: flex; align-items: center; justify-content: center; gap: 14px; margin-bottom: 8px; flex-wrap: wrap; }
   .logo { width: 90px; height: 72px; background: linear-gradient(145deg, #1565C0, #0D47A1); clip-path: polygon(25% 6%, 75% 6%, 100% 50%, 75% 94%, 25% 94%, 0% 50%); display: flex; align-items: center; justify-content: center; position: relative; box-shadow: 0 4px 10px rgba(0,0,0,0.35); }
@@ -17,10 +15,9 @@
   .header h1 { font-size: 2.2rem; margin: 0; line-height: 1.2; }
   .header .slogan { font-size: 1.1rem; color: #ffd700; font-weight: 700; margin: 6px 0 4px; }
   .header .tagline { font-size: 1rem; background: #ffd700; color: #1a3a6e; display: inline-block; padding: 6px 14px; border-radius: 20px; font-weight: bold; margin: 10px 0 8px; }
-  .header .contacts { margin-top: 12px; font-size: 1.05rem; white-space: nowrap; overflow-x: auto; }
+  .header .contacts { margin-top: 12px; font-size: 1.05rem; }
   .header .contacts a { color: #ffd700; text-decoration: none; font-weight: bold; }
   .header .people { margin-top: 14px; font-size: 0.95rem; }
-  .header .people span { display: block; margin: 3px 0; }
   .container { max-width: 900px; margin: 0 auto; padding: 20px; }
   .card { background: white; border-radius: 12px; padding: 22px; margin-bottom: 18px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
   .card h2 { color: #1a3a6e; margin-bottom: 14px; font-size: 1.4rem; border-bottom: 3px solid #1a3a6e; padding-bottom: 7px; }
@@ -34,7 +31,7 @@
   .product-header .icon { font-size: 1.2rem; transition: transform 0.25s; }
   .product-item.active .product-header .icon { transform: rotate(180deg); }
   .product-body { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; background: #f8fafc; }
-  .product-item.active .product-body { max-height: 700px; }
+  .product-item.active .product-body { max-height: 750px; }
   .product-details { padding: 14px 16px 18px; }
   .product-price { color: #c0392b; font-weight: 700; font-size: 1.1rem; margin-bottom: 6px; }
   .unit { font-size: 0.9rem; color: #1a3a6e; font-weight: 600; margin-bottom: 4px; }
@@ -50,22 +47,12 @@
   .order-btn {
     width: 100%; margin-top: 12px; padding: 14px; background: #25D366; color: white;
     border: none; border-radius: 10px; font-size: 1.1rem; font-weight: 700; cursor: pointer;
-    display: flex; align-items: center; justify-content: center; gap: 8px;
   }
   .order-btn:active { background: #1da851; }
   .contact-bottom { background: #1a3a6e; color: white; text-align: center; }
   .contact-bottom a { color: #ffd700; text-decoration: none; font-size: 1.15rem; font-weight: bold; }
   .contact-bottom p { margin: 7px 0; }
-  .contact-bottom .numbers { white-space: nowrap; overflow-x: auto; }
   footer { text-align: center; padding: 18px; color: #666; font-size: 0.9rem; }
-
-  @media (max-width: 480px) {
-    .header .contacts, .contact-bottom .numbers { font-size: 0.95rem; }
-    .header h1 { font-size: 1.8rem; }
-    .logo { width: 76px; height: 58px; }
-    .logo span { font-size: 18px; }
-    .logo::before { top: -15px; width: 34px; height: 18px; }
-  }
 </style>
 </head>
 <body>
@@ -86,7 +73,6 @@
 </div>
 
 <div class="container">
-
   <div class="card">
     <h2>கிடைக்கும் பொருட்கள்</h2>
     <div class="price-title">
@@ -127,9 +113,7 @@
             <input type="text" id="name-msand" placeholder="பெயர் எழுதுங்கள்">
             <label>மொபைல் நம்பர்</label>
             <input type="tel" id="mobile-msand" placeholder="10 digit number" maxlength="10">
-            <button class="order-btn" onclick="sendOrder('எம். சாண்ட் (M.Sand)', 'qty-msand', 'name-msand', 'mobile-msand')">
-              📱 WhatsApp-ல் Order போடு
-            </button>
+            <button class="order-btn" onclick="sendOrder('எம். சாண்ட் (M.Sand)', 'qty-msand', 'name-msand', 'mobile-msand')">📱 WhatsApp-ல் Order போடு</button>
           </div>
         </div>
       </div>
@@ -167,9 +151,7 @@
             <input type="text" id="name-psand" placeholder="பெயர் எழுதுங்கள்">
             <label>மொபைல் நம்பர்</label>
             <input type="tel" id="mobile-psand" placeholder="10 digit number" maxlength="10">
-            <button class="order-btn" onclick="sendOrder('பி. சாண்ட் (P.Sand)', 'qty-psand', 'name-psand', 'mobile-psand')">
-              📱 WhatsApp-ல் Order போடு
-            </button>
+            <button class="order-btn" onclick="sendOrder('பி. சாண்ட் (P.Sand)', 'qty-psand', 'name-psand', 'mobile-psand')">📱 WhatsApp-ல் Order போடு</button>
           </div>
         </div>
       </div>
@@ -214,9 +196,7 @@
             <input type="text" id="name-jally" placeholder="பெயர் எழுதுங்கள்">
             <label>மொபைல் நம்பர்</label>
             <input type="tel" id="mobile-jally" placeholder="10 digit number" maxlength="10">
-            <button class="order-btn" onclick="sendOrderJally()">
-              📱 WhatsApp-ல் Order போடு
-            </button>
+            <button class="order-btn" onclick="sendOrderJally()">📱 WhatsApp-ல் Order போடு</button>
           </div>
         </div>
       </div>
@@ -249,9 +229,7 @@
             <input type="text" id="name-gravel" placeholder="பெயர் எழுதுங்கள்">
             <label>மொபைல் நம்பர்</label>
             <input type="tel" id="mobile-gravel" placeholder="10 digit number" maxlength="10">
-            <button class="order-btn" onclick="sendOrder('கிரவால் (Gravel)', 'qty-gravel', 'name-gravel', 'mobile-gravel')">
-              📱 WhatsApp-ல் Order போடு
-            </button>
+            <button class="order-btn" onclick="sendOrder('கிரவால் (Gravel)', 'qty-gravel', 'name-gravel', 'mobile-gravel')">📱 WhatsApp-ல் Order போடு</button>
           </div>
         </div>
       </div>
@@ -291,9 +269,7 @@
             <input type="text" id="name-bricks" placeholder="பெயர் எழுதுங்கள்">
             <label>மொபைல் நம்பர்</label>
             <input type="tel" id="mobile-bricks" placeholder="10 digit number" maxlength="10">
-            <button class="order-btn" onclick="sendOrderBricks()">
-              📱 WhatsApp-ல் Order போடு
-            </button>
+            <button class="order-btn" onclick="sendOrderBricks()">📱 WhatsApp-ல் Order போடு</button>
           </div>
         </div>
       </div>
@@ -323,9 +299,7 @@
             <input type="text" id="name-acc" placeholder="பெயர் எழுதுங்கள்">
             <label>மொபைல் நம்பர்</label>
             <input type="tel" id="mobile-acc" placeholder="10 digit number" maxlength="10">
-            <button class="order-btn" onclick="sendOrderACC()">
-              📱 WhatsApp-ல் Order போடு
-            </button>
+            <button class="order-btn" onclick="sendOrderACC()">📱 WhatsApp-ல் Order போடு</button>
           </div>
         </div>
       </div>
@@ -352,9 +326,7 @@
             <input type="text" id="name-hollow" placeholder="பெயர் எழுதுங்கள்">
             <label>மொபைல் நம்பர்</label>
             <input type="tel" id="mobile-hollow" placeholder="10 digit number" maxlength="10">
-            <button class="order-btn" onclick="sendOrder('ஹாலோ பிளாக் (Hollow Blocks)', 'qty-hollow', 'name-hollow', 'mobile-hollow')">
-              📱 WhatsApp-ல் Order போடு
-            </button>
+            <button class="order-btn" onclick="sendOrder('ஹாலோ பிளாக் (Hollow Blocks)', 'qty-hollow', 'name-hollow', 'mobile-hollow')">📱 WhatsApp-ல் Order போடு</button>
           </div>
         </div>
       </div>
@@ -365,11 +337,10 @@
     </p>
   </div>
 
-  <!-- Contact Bottom -->
   <div class="card contact-bottom">
     <h2 style="color:white; border-color:#ffd700;">தொடர்புக்கு</h2>
     <p>📍 முகவரி: நீளத்தநல்லூர் மெயின்ரோடு, அசூர், கும்பகோணம்</p>
-    <p class="numbers">
+    <p>
       📞 <a href="tel:+919994341880">+91 99943 41880</a> &nbsp;|&nbsp; <a href="tel:+918489803165">+91 84898 03165</a>
     </p>
   </div>
@@ -378,9 +349,6 @@
 <footer>© 2026 VRP Agencies</footer>
 
 <script>
-  // WhatsApp number (without +)
-  const WHATSAPP_NUMBER = "918489803165";
-
   function toggleProduct(header) {
     const item = header.parentElement;
     document.querySelectorAll('.product-item').forEach(el => {
@@ -401,16 +369,54 @@
     return true;
   }
 
-  // ★★★ இந்த function தான் முக்கியம் - நேரடியாக அந்த number-ன் chat திறக்கும் ★★★
+  // ========== மிகவும் வலுவான WhatsApp Open Function ==========
   function openWhatsApp(message) {
-    // api.whatsapp.com method - மிகவும் நம்பகமானது
-    const url = `https://api.whatsapp.com/send?phone=\( {WHATSAPP_NUMBER}&text= \){encodeURIComponent(message)}`;
-    
-    // மொபைலில் நேரடியாக WhatsApp App திறக்க
-    window.location.href = url;
+    const phone = "918489803165";
+    const encodedText = encodeURIComponent(message);
+
+    // 1. Direct WhatsApp scheme (best for most phones)
+    const schemeUrl = "whatsapp://send?phone=" + phone + "&text=" + encodedText;
+
+    // 2. Android Intent - Normal WhatsApp
+    const intentNormal = "intent://send?phone=" + phone + "&text=" + encodedText + "#Intent;scheme=whatsapp;package=com.whatsapp;end";
+
+    // 3. Android Intent - WhatsApp Business
+    const intentBusiness = "intent://send?phone=" + phone + "&text=" + encodedText + "#Intent;scheme=whatsapp;package=com.whatsapp.w4b;end";
+
+    // 4. Web fallback
+    const webUrl = "https://api.whatsapp.com/send?phone=" + phone + "&text=" + encodedText;
+
+    const ua = navigator.userAgent || "";
+    const isAndroid = /Android/i.test(ua);
+    const isIOS = /iPhone|iPad|iPod/i.test(ua);
+
+    if (isAndroid) {
+      // Try Intent methods first (strongest on Android)
+      window.location.href = intentNormal;
+
+      setTimeout(function() {
+        window.location.href = intentBusiness;
+      }, 600);
+
+      setTimeout(function() {
+        window.location.href = schemeUrl;
+      }, 1200);
+
+      setTimeout(function() {
+        window.location.href = webUrl;
+      }, 2000);
+
+    } else if (isIOS) {
+      window.location.href = schemeUrl;
+      setTimeout(function() {
+        window.location.href = webUrl;
+      }, 1500);
+    } else {
+      // Desktop
+      window.open(webUrl, "_blank");
+    }
   }
 
-  // Generic order
   function sendOrder(productName, qtyId, nameId, mobileId) {
     const qty = document.getElementById(qtyId).value;
     const name = document.getElementById(nameId).value.trim();
@@ -418,19 +424,16 @@
 
     if (!validate(name, mobile)) return;
 
-    const message = `*VRP Agencies - புதிய ஆர்டர்*
-
-பொருள்: ${productName}
-அளவு: ${qty}
-பெயர்: ${name}
-மொபைல்: ${mobile}
-
-தயவுசெய்து விலையை உறுதிப்படுத்தி அழைக்கவும்.`;
+    const message = "*VRP Agencies - புதிய ஆர்டர்*\n\n" +
+      "பொருள்: " + productName + "\n" +
+      "அளவு: " + qty + "\n" +
+      "பெயர்: " + name + "\n" +
+      "மொபைல்: " + mobile + "\n\n" +
+      "தயவுசெய்து விலையை உறுதிப்படுத்தி அழைக்கவும்.";
 
     openWhatsApp(message);
   }
 
-  // Jally special
   function sendOrderJally() {
     const type = document.getElementById("type-jally").value;
     const qty = document.getElementById("qty-jally").value;
@@ -439,20 +442,17 @@
 
     if (!validate(name, mobile)) return;
 
-    const message = `*VRP Agencies - புதிய ஆர்டர்*
-
-பொருள்: ஜல்லி (Jally)
-வகை: ${type}
-அளவு: ${qty}
-பெயர்: ${name}
-மொபைல்: ${mobile}
-
-தயவுசெய்து விலையை உறுதிப்படுத்தி அழைக்கவும்.`;
+    const message = "*VRP Agencies - புதிய ஆர்டர்*\n\n" +
+      "பொருள்: ஜல்லி (Jally)\n" +
+      "வகை: " + type + "\n" +
+      "அளவு: " + qty + "\n" +
+      "பெயர்: " + name + "\n" +
+      "மொபைல்: " + mobile + "\n\n" +
+      "தயவுசெய்து விலையை உறுதிப்படுத்தி அழைக்கவும்.";
 
     openWhatsApp(message);
   }
 
-  // Bricks special
   function sendOrderBricks() {
     const load = document.getElementById("qty-bricks").value;
     const pieces = document.getElementById("pieces-bricks").value.trim();
@@ -461,24 +461,21 @@
 
     if (!validate(name, mobile)) return;
 
-    let qtyText = `Load: ${load}`;
+    let qtyText = "Load: " + load;
     if (pieces) {
-      qtyText += `\nPieces: ${pieces}`;
+      qtyText += "\nPieces: " + pieces;
     }
 
-    const message = `*VRP Agencies - புதிய ஆர்டர்*
-
-பொருள்: செங்கல் (Bricks)
-${qtyText}
-பெயர்: ${name}
-மொபைல்: ${mobile}
-
-தயவுசெய்து விலையை உறுதிப்படுத்தி அழைக்கவும்.`;
+    const message = "*VRP Agencies - புதிய ஆர்டர்*\n\n" +
+      "பொருள்: செங்கல் (Bricks)\n" +
+      qtyText + "\n" +
+      "பெயர்: " + name + "\n" +
+      "மொபைல்: " + mobile + "\n\n" +
+      "தயவுசெய்து விலையை உறுதிப்படுத்தி அழைக்கவும்.";
 
     openWhatsApp(message);
   }
 
-  // ACC Block special
   function sendOrderACC() {
     const size = document.getElementById("size-acc").value;
     const pieces = document.getElementById("pieces-acc").value.trim();
@@ -491,33 +488,16 @@ ${qtyText}
       return;
     }
 
-    const message = `*VRP Agencies - புதிய ஆர்டர்*
-
-பொருள்: ஏ.சி. பிளாக் (ACC Block)
-Size: ${size}
-Pieces: ${pieces}
-பெயர்: ${name}
-மொபைல்: ${mobile}
-
-தயவுசெய்து விலையை உறுதிப்படுத்தி அழைக்கவும்.`;
+    const message = "*VRP Agencies - புதிய ஆர்டர்*\n\n" +
+      "பொருள்: ஏ.சி. பிளாக் (ACC Block)\n" +
+      "Size: " + size + "\n" +
+      "Pieces: " + pieces + "\n" +
+      "பெயர்: " + name + "\n" +
+      "மொபைல்: " + mobile + "\n\n" +
+      "தயவுசெய்து விலையை உறுதிப்படுத்தி அழைக்கவும்.";
 
     openWhatsApp(message);
   }
-
-  // Security
-  document.addEventListener('contextmenu', e => e.preventDefault());
-  document.addEventListener('selectstart', e => e.preventDefault());
-  document.addEventListener('dragstart', e => e.preventDefault());
-
-  document.addEventListener('keydown', function(e) {
-    if (e.keyCode === 123) { e.preventDefault(); return false; }
-    if (e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74 || e.keyCode === 67)) {
-      e.preventDefault(); return false;
-    }
-    if (e.ctrlKey && e.keyCode === 85) { e.preventDefault(); return false; }
-    if (e.ctrlKey && e.keyCode === 83) { e.preventDefault(); return false; }
-    if (e.ctrlKey && e.keyCode === 80) { e.preventDefault(); return false; }
-  });
 </script>
 </body>
 </html>
