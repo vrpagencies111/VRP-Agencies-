@@ -378,6 +378,7 @@
 <footer>© 2026 VRP Agencies</footer>
 
 <script>
+  // WhatsApp number (without +)
   const WHATSAPP_NUMBER = "918489803165";
 
   function toggleProduct(header) {
@@ -400,9 +401,13 @@
     return true;
   }
 
+  // ★★★ இந்த function தான் முக்கியம் - நேரடியாக அந்த number-ன் chat திறக்கும் ★★★
   function openWhatsApp(message) {
-    const url = `https://wa.me/\( {WHATSAPP_NUMBER}?text= \){encodeURIComponent(message)}`;
-    window.open(url, "_blank");
+    // api.whatsapp.com method - மிகவும் நம்பகமானது
+    const url = `https://api.whatsapp.com/send?phone=\( {WHATSAPP_NUMBER}&text= \){encodeURIComponent(message)}`;
+    
+    // மொபைலில் நேரடியாக WhatsApp App திறக்க
+    window.location.href = url;
   }
 
   // Generic order
@@ -499,7 +504,7 @@ Pieces: ${pieces}
     openWhatsApp(message);
   }
 
-  // Security (optional)
+  // Security
   document.addEventListener('contextmenu', e => e.preventDefault());
   document.addEventListener('selectstart', e => e.preventDefault());
   document.addEventListener('dragstart', e => e.preventDefault());
