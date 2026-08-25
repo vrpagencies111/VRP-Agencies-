@@ -1,1 +1,216 @@
+<meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline'; img-src 'self' data: https:;">
+<meta name="referrer" content="no-referrer">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+  body { background: #f0f4f8; color: #222; line-height: 1.6; -webkit-user-select: none; user-select: none; }
+  .header { background: linear-gradient(135deg, #1a3a6e, #0d2b5e); color: white; padding: 26px 16px; text-align: center; }
+  .brand { display: flex; align-items: center; justify-content: center; gap: 14px; margin-bottom: 8px; flex-wrap: wrap; }
+  .logo { width: 90px; height: 72px; background: linear-gradient(145deg, #1565C0, #0D47A1); clip-path: polygon(25% 6%, 75% 6%, 100% 50%, 75% 94%, 25% 94%, 0% 50%); display: flex; align-items: center; justify-content: center; position: relative; box-shadow: 0 4px 10px rgba(0,0,0,0.35); }
+  .logo::before { content: ""; position: absolute; top: -18px; width: 42px; height: 22px; background: #1565C0; clip-path: polygon(10% 100%, 0% 40%, 20% 60%, 35% 0%, 50% 45%, 65% 0%, 80% 60%, 100% 40%, 90% 100%); }
+  .logo span { color: white; font-size: 22px; font-weight: 900; font-family: Arial Black, Arial, sans-serif; line-height: 1; margin-top: 4px; letter-spacing: 1px; }
+  .header h1 { font-size: 2.2rem; margin: 0; line-height: 1.2; }
+  .header .tagline { font-size: 1rem; background: #ffd700; color: #1a3a6e; display: inline-block; padding: 6px 14px; border-radius: 20px; font-weight: bold; margin: 12px 0 8px; }
+  .header .contacts { margin-top: 12px; font-size: 1.05rem; white-space: nowrap; overflow-x: auto; }
+  .header .contacts a { color: #ffd700; text-decoration: none; font-weight: bold; }
+  .header .people { margin-top: 14px; font-size: 0.95rem; }
+  .header .people span { display: block; margin: 3px 0; }
+  .container { max-width: 900px; margin: 0 auto; padding: 20px; }
+  .card { background: white; border-radius: 12px; padding: 22px; margin-bottom: 18px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+  .card h2 { color: #1a3a6e; margin-bottom: 14px; font-size: 1.4rem; border-bottom: 3px solid #1a3a6e; padding-bottom: 7px; }
+  .price-title { text-align: center; margin: 8px 0 16px; }
+  .price-title .offer { background: #e8f5e9; color: #2e7d32; font-weight: 600; padding: 8px 12px; border-radius: 8px; font-size: 0.95rem; margin-bottom: 10px; display: inline-block; }
+  .price-title h3 { color: #1a3a6e; font-size: 1.15rem; margin-top: 6px; }
+  .product-item { background: #e8f0fe; border-radius: 10px; margin-bottom: 12px; overflow: hidden; }
+  .product-header { padding: 16px 14px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: 700; color: #1a3a6e; font-size: 1.05rem; }
+  .product-header:active { background: #d6e4ff; }
+  .product-header .icon { font-size: 1.2rem; transition: transform 0.25s; }
+  .product-item.active .product-header .icon { transform: rotate(180deg); }
+  .product-body { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; background: #f8fafc; }
+  .product-item.active .product-body { max-height: 280px; }
+  .product-details { padding: 14px 16px 18px; }
+  .product-price { color: #c0392b; font-weight: 700; font-size: 1.1rem; margin-bottom: 6px; }
+  .unit { font-size: 0.9rem; color: #1a3a6e; font-weight: 600; margin-bottom: 4px; }
+  .note { font-size: 0.88rem; color: #555; }
+  .contact-bottom { background: #1a3a6e; color: white; text-align: center; }
+  .contact-bottom a { color: #ffd700; text-decoration: none; font-size: 1.15rem; font-weight: bold; }
+  .contact-bottom p { margin: 7px 0; }
+  .contact-bottom .numbers { white-space: nowrap; overflow-x: auto; }
+  footer { text-align: center; padding: 18px; color: #666; font-size: 0.9rem; }
+  @media (max-width: 480px) {
+    .header .contacts, .contact-bottom .numbers { font-size: 0.95rem; }
+    .header h1 { font-size: 1.8rem; }
+    .logo { width: 76px; height: 58px; }
+    .logo span { font-size: 18px; }
+    .logo::before { top: -15px; width: 34px; height: 18px; }
+  }
+</style>
 
+<div class="header">
+  <div class="brand">
+    <div class="logo"><span>VRP</span></div>
+    <h1>VRP Agencies</h1>
+  </div>
+  <div class="tagline">மொத்தமாகவும் சில்லறையாகவும் கிடைக்கும்</div>
+  <div class="contacts">
+    📞 <a href="tel:+919994341880">+91 99943 41880</a> &nbsp;|&nbsp; <a href="tel:+918489803165">+91 84898 03165</a>
+  </div>
+  <div class="people">
+    <span><strong>உரிமம்:</strong> V.ராமலிங்கம்</span>
+  </div>
+</div>
+
+<div class="container">
+  <div class="card">
+    <h2>கிடைக்கும் பொருட்கள்</h2>
+    <div class="price-title">
+      <div class="offer">மொத்த லோடாக வாங்கினால் விலை குறைவாகக் கிடைக்கும்</div>
+      <h3>பொருள் விவரம் தெரிய பொருள் பெயரை தொடவும்</h3>
+    </div>
+
+    <div class="product-item">
+      <div class="product-header" onclick="toggleProduct(this)">
+        எம். சாண்ட் (M.Sand) <span class="icon">▼</span>
+      </div>
+      <div class="product-body">
+        <div class="product-details">
+          <div class="product-price">₹ 6,700 - 7,000</div>
+          <div class="unit">ஒரு யூனிட் விலை</div>
+          <div class="note">தூரத்தைப் பொறுத்து விலை மாறும்</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-item">
+      <div class="product-header" onclick="toggleProduct(this)">
+        பி. சாண்ட் (P.Sand) <span class="icon">▼</span>
+      </div>
+      <div class="product-body">
+        <div class="product-details">
+          <div class="product-price">₹ 7,600 - 8,000</div>
+          <div class="unit">ஒரு யூனிட் விலை</div>
+          <div class="note">தூரத்தைப் பொறுத்து விலை மாறும்</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-item">
+      <div class="product-header" onclick="toggleProduct(this)">
+        முக்கால் ஜல்லி (Jally) <span class="icon">▼</span>
+      </div>
+      <div class="product-body">
+        <div class="product-details">
+          <div class="product-price">₹ 5,700 - 6,000</div>
+          <div class="unit">ஒரு யூனிட் விலை</div>
+          <div class="note">தூரத்தைப் பொறுத்து விலை மாறும்</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-item">
+      <div class="product-header" onclick="toggleProduct(this)">
+        செங்கல் (Bricks) <span class="icon">▼</span>
+      </div>
+      <div class="product-body">
+        <div class="product-details">
+          <div class="product-price">₹ 28,000 - 28,500</div>
+          <div class="note">1 லோடு = 3000 செங்கல்<br>தூரத்தைப் பொறுத்து விலை மாறும்</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-item">
+      <div class="product-header" onclick="toggleProduct(this)">
+        ஏ.சி. பிளாக் (ACC Block) <span class="icon">▼</span>
+      </div>
+      <div class="product-body">
+        <div class="product-details">
+          <div class="product-price">தயவுசெய்து அழைக்கவும்</div>
+          <div class="note">Sizes: 4", 6", 8", 9"<br>சரியான விலைக்கு தொடர்பு கொள்ளவும்</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-item">
+      <div class="product-header" onclick="toggleProduct(this)">
+        ஹாலோ பிளாக் (Hollow Blocks) <span class="icon">▼</span>
+      </div>
+      <div class="product-body">
+        <div class="product-details">
+          <div class="product-price">தயவுசெய்து அழைக்கவும்</div>
+          <div class="note">விவரம் மற்றும் விலை அறிய அழைக்கவும்</div>
+        </div>
+      </div>
+    </div>
+
+    <p style="margin-top:16px; font-size:0.88rem; color:#555; text-align:center;">
+      * விலை தூரம் மற்றும் பொருள் அளவைப் பொறுத்து மாறும். சரியான விலைக்கு அழைக்கவும்.
+    </p>
+  </div>
+
+  <div class="card contact-bottom">
+    <h2 style="color:white; border-color:#ffd700;">தொடர்புக்கு</h2>
+    <p>📍 முகவரி: நீளத்தநல்லூர் மெயின்ரோடு, அசூர், கும்பகோணம்</p>
+    <p class="numbers">
+      📞 <a href="tel:+919994341880">+91 99943 41880</a> &nbsp;|&nbsp; <a href="tel:+918489803165">+91 84898 03165</a>
+    </p>
+  </div>
+</div>
+
+<footer>© 2026 VRP Agencies</footer>
+
+<script>
+  // Product accordion
+  function toggleProduct(header) {
+    const item = header.parentElement;
+    document.querySelectorAll('.product-item').forEach(el => {
+      if (el !== item) el.classList.remove('active');
+    });
+    item.classList.toggle('active');
+  }
+
+  // ========== MAXIMUM BASIC PROTECTION ==========
+  // 1. Disable right click
+  document.addEventListener('contextmenu', e => e.preventDefault());
+
+  // 2. Disable text selection & drag
+  document.addEventListener('selectstart', e => e.preventDefault());
+  document.addEventListener('dragstart', e => e.preventDefault());
+
+  // 3. Block keyboard shortcuts
+  document.addEventListener('keydown', function(e) {
+    // F12
+    if (e.keyCode === 123) { e.preventDefault(); return false; }
+    // Ctrl+Shift+I / Ctrl+Shift+J / Ctrl+Shift+C
+    if (e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74 || e.keyCode === 67)) {
+      e.preventDefault(); return false;
+    }
+    // Ctrl+U (view source)
+    if (e.ctrlKey && e.keyCode === 85) { e.preventDefault(); return false; }
+    // Ctrl+S (save)
+    if (e.ctrlKey && e.keyCode === 83) { e.preventDefault(); return false; }
+    // Ctrl+P
+    if (e.ctrlKey && e.keyCode === 80) { e.preventDefault(); return false; }
+  });
+
+  // 4. Console warning + clear
+  setInterval(function() {
+    console.clear();
+    console.log("%c⚠ Stop!", "color: red; font-size: 50px; font-weight: bold;");
+    console.log("%cThis browser feature is for developers only. Do not enter any code here.", "font-size: 16px; color: red;");
+  }, 1500);
+
+  // 5. Basic DevTools detection (not 100% reliable)
+  let devtools = { open: false };
+  setInterval(function() {
+    const widthThreshold = window.outerWidth - window.innerWidth > 160;
+    const heightThreshold = window.outerHeight - window.innerHeight > 160;
+    if (widthThreshold || heightThreshold) {
+      if (!devtools.open) {
+        devtools.open = true;
+        document.body.innerHTML = "<div style='display:flex;justify-content:center;align-items:center;height:100vh;background:#1a3a6e;color:white;font-size:24px;text-align:center;padding:20px;'>Developer tools detected.<br>Access restricted for security.</div>";
+      }
+    } else {
+      devtools.open = false;
+    }
+  }, 1000);
+</script>
