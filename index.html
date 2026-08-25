@@ -1,5 +1,11 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline'; img-src 'self' data: https:;">
 <meta name="referrer" content="no-referrer">
+<title>VRP Agencies</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
   body { background: #f0f4f8; color: #222; line-height: 1.6; -webkit-user-select: none; user-select: none; }
@@ -40,6 +46,37 @@
   .contact-bottom p { margin: 7px 0; }
   .contact-bottom .numbers { white-space: nowrap; overflow-x: auto; }
   footer { text-align: center; padding: 18px; color: #666; font-size: 0.9rem; }
+
+  /* Order Form Styles */
+  .order-form label { display: block; margin: 12px 0 5px; font-weight: 600; color: #1a3a6e; }
+  .order-form select, .order-form input, .order-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #c5d4f0;
+    border-radius: 8px;
+    font-size: 1rem;
+    margin-bottom: 8px;
+  }
+  .order-form textarea { resize: vertical; min-height: 80px; }
+  .order-btn {
+    background: #25D366;
+    color: white;
+    border: none;
+    padding: 16px;
+    width: 100%;
+    font-size: 1.15rem;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+  .order-btn:active { background: #1da851; }
+  .whatsapp-icon { font-size: 1.4rem; }
+
   @media (max-width: 480px) {
     .header .contacts, .contact-bottom .numbers { font-size: 0.95rem; }
     .header h1 { font-size: 1.8rem; }
@@ -48,6 +85,8 @@
     .logo::before { top: -15px; width: 34px; height: 18px; }
   }
 </style>
+</head>
+<body>
 
 <div class="header">
   <div class="brand">
@@ -65,6 +104,8 @@
 </div>
 
 <div class="container">
+
+  <!-- Products Section -->
   <div class="card">
     <h2>கிடைக்கும் பொருட்கள்</h2>
     <div class="price-title">
@@ -193,6 +234,51 @@
     </p>
   </div>
 
+  <!-- ===== ORDER FORM ===== -->
+  <div class="card">
+    <h2>ஆர்டர் செய்ய</h2>
+    <p style="margin-bottom:15px; color:#555;">கீழே உள்ள விவரங்களை நிரப்பி WhatsApp மூலம் ஆர்டர் அனுப்பவும்</p>
+
+    <div class="order-form">
+      <label>உங்கள் பெயர் *</label>
+      <input type="text" id="customerName" placeholder="உங்கள் முழு பெயர்" required>
+
+      <label>மொபைல் நம்பர் *</label>
+      <input type="tel" id="customerPhone" placeholder="10 இலக்க மொபைல் நம்பர்" required>
+
+      <label>பொருள் தேர்வு செய்யவும் *</label>
+      <select id="product" required>
+        <option value="">-- பொருளை தேர்வு செய்யவும் --</option>
+        <option value="M.Sand (எம். சாண்ட்)">M.Sand (எம். சாண்ட்) - ₹6500-7000 / Unit</option>
+        <option value="P.Sand (பி. சாண்ட்)">P.Sand (பி. சாண்ட்) - ₹7600-8000 / Unit</option>
+        <option value="முக்கால் ஜல்லி">முக்கால் ஜல்லி - ₹5500-6000</option>
+        <option value="ஒன்றரை ஜல்லி">ஒன்றரை ஜல்லி - ₹5500-6000</option>
+        <option value="அரை ஜல்லி & Chips">அரை ஜல்லி & Chips - ₹5800-6000</option>
+        <option value="Gravel 4 Unit">Gravel 4 Unit - ₹10000-12000</option>
+        <option value="Gravel 6 Unit">Gravel 6 Unit - ₹12000-14000</option>
+        <option value="Gravel 9 Unit">Gravel 9 Unit - ₹17000-19000</option>
+        <option value="Bricks (செங்கல்) 1 Load">Bricks (செங்கல்) 1 Load (3000 nos) - ₹28000-28500</option>
+        <option value="ACC Block">ACC Block (4"/6"/8"/9")</option>
+        <option value="Hollow Blocks">Hollow Blocks</option>
+        <option value="மற்றவை">மற்றவை (கீழே குறிப்பிடவும்)</option>
+      </select>
+
+      <label>அளவு / யூனிட் *</label>
+      <input type="text" id="quantity" placeholder="எ.கா: 2 Unit / 1 Load / 5000 nos" required>
+
+      <label>டெலிவரி முகவரி (விருப்பமானது)</label>
+      <textarea id="address" placeholder="டெலிவரி செய்ய வேண்டிய இடம்"></textarea>
+
+      <label>கூடுதல் குறிப்பு</label>
+      <textarea id="notes" placeholder="ஏதேனும் சிறப்பு தேவைகள் இருந்தால் எழுதவும்"></textarea>
+
+      <button class="order-btn" onclick="sendOrder()">
+        <span class="whatsapp-icon">📱</span> WhatsApp-ல் ஆர்டர் அனுப்பு
+      </button>
+    </div>
+  </div>
+
+  <!-- Contact Bottom -->
   <div class="card contact-bottom">
     <h2 style="color:white; border-color:#ffd700;">தொடர்புக்கு</h2>
     <p>📍 முகவரி: நீளத்தநல்லூர் மெயின்ரோடு, அசூர், கும்பகோணம்</p>
@@ -213,6 +299,42 @@
     item.classList.toggle('active');
   }
 
+  // ===== ORDER SEND FUNCTION =====
+  function sendOrder() {
+    const name = document.getElementById('customerName').value.trim();
+    const phone = document.getElementById('customerPhone').value.trim();
+    const product = document.getElementById('product').value;
+    const quantity = document.getElementById('quantity').value.trim();
+    const address = document.getElementById('address').value.trim();
+    const notes = document.getElementById('notes').value.trim();
+
+    if (!name || !phone || !product || !quantity) {
+      alert('தயவுசெய்து * குறிப்பிட்ட அனைத்து விவரங்களையும் நிரப்பவும்');
+      return;
+    }
+
+    const whatsappNumber = "918489803165";
+
+    let message = `*VRP Agencies - புதிய ஆர்டர்*\n\n`;
+    message += `👤 *பெயர்:* ${name}\n`;
+    message += `📞 *மொபைல்:* ${phone}\n`;
+    message += `📦 *பொருள்:* ${product}\n`;
+    message += `🔢 *அளவு:* ${quantity}\n`;
+    
+    if (address) {
+      message += `📍 *முகவரி:* ${address}\n`;
+    }
+    if (notes) {
+      message += `📝 *குறிப்பு:* ${notes}\n`;
+    }
+    
+    message += `\n------------------------\nஆர்டர் நேரம்: ${new Date().toLocaleString('ta-IN')}`;
+
+    const url = `https://wa.me/\( {whatsappNumber}?text= \){encodeURIComponent(message)}`;
+    window.open(url, '_blank');
+  }
+
+  // Security
   document.addEventListener('contextmenu', e => e.preventDefault());
   document.addEventListener('selectstart', e => e.preventDefault());
   document.addEventListener('dragstart', e => e.preventDefault());
@@ -247,3 +369,5 @@
     }
   }, 1000);
 </script>
+</body>
+</html>
