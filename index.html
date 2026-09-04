@@ -357,5 +357,307 @@
             <div class="order-note">
               உறுதி செய்து விட்டு ஆர்டர் செய்யவும் மற்றும் ஆர்டர் செய்த பிறகு எங்களிடம் இருந்து வரும் தொலைபேசி அழைப்பை தவறாமல் எடுக்கவும்.<br><br>
               <strong>ஆர்டர் செய்த பிறகு 10 நிமிடத்திற்குள் Order Confirmation message வரவில்லை என்றால் எங்களை தொடர்பு கொள்ளவும்.</strong>
- </div>
- 
+            </div>
+            <label>அளவு (Unit)</label>
+            <select id="qty-gravel">
+              <option value="3">3 Unit</option>
+              <option value="4">4 Unit</option>
+              <option value="5">5 Unit</option>
+              <option value="6">6 Unit</option>
+              <option value="7">7 Unit</option>
+              <option value="8">8 Unit</option>
+              <option value="9">9 Unit</option>
+            </select>
+            <label>உங்கள் பெயர்</label>
+            <input type="text" id="name-gravel" placeholder="பெயர் எழுதுங்கள்">
+            <label>மொபைல் நம்பர்</label>
+            <input type="tel" id="mobile-gravel" placeholder="10 digit number" maxlength="10">
+            <button class="order-btn" onclick="sendOrder('கிரவால் (Gravel)', 'qty-gravel', 'name-gravel', 'mobile-gravel')">📱 WhatsApp-ல் Order போடு</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bricks -->
+    <div class="product-item">
+      <div class="product-header" onclick="toggleProduct(this)">
+        செங்கல் (Bricks) <span class="icon">▼</span>
+      </div>
+      <div class="product-body">
+        <div class="product-details">
+          <div class="product-price">₹ 28,000 - 28,500</div>
+          <div class="note">1 Load = 3000 செங்கல்<br>தூரத்தைப் பொறுத்து விலை மாறும்</div>
+          <div class="order-box">
+            <div class="order-note">
+              உறுதி செய்து விட்டு ஆர்டர் செய்யவும் மற்றும் ஆர்டர் செய்த பிறகு எங்களிடம் இருந்து வரும் தொலைபேசி அழைப்பை தவறாமல் எடுக்கவும்.<br><br>
+              <strong>ஆர்டர் செய்த பிறகு 10 நிமிடத்திற்குள் Order Confirmation message வரவில்லை என்றால் எங்களை தொடர்பு கொள்ளவும்.</strong>
+            </div>
+            <label>Load எண்ணிக்கை</label>
+            <select id="qty-bricks">
+              <option value="1">1 Load</option>
+              <option value="2">2 Load</option>
+              <option value="3">3 Load</option>
+              <option value="4">4 Load</option>
+              <option value="5">5 Load</option>
+              <option value="6">6 Load</option>
+              <option value="7">7 Load</option>
+              <option value="8">8 Load</option>
+              <option value="9">9 Load</option>
+              <option value="10">10 Load</option>
+              <option value="15">15 Load</option>
+              <option value="20">20 Load</option>
+              <option value="25">25 Load</option>
+              <option value="30">30 Load</option>
+            </select>
+            <label>அல்லது Pieces எண்ணிக்கை (optional)</label>
+            <input type="number" id="pieces-bricks" placeholder="எ.கா. 6000" min="1">
+            <label>உங்கள் பெயர்</label>
+            <input type="text" id="name-bricks" placeholder="பெயர் எழுதுங்கள்">
+            <label>மொபைல் நம்பர்</label>
+            <input type="tel" id="mobile-bricks" placeholder="10 digit number" maxlength="10">
+            <button class="order-btn" onclick="sendOrderBricks()">📱 WhatsApp-ல் Order போடு</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ACC Block -->
+    <div class="product-item">
+      <div class="product-header" onclick="toggleProduct(this)">
+        ஏ.சி. பிளாக் (ACC Block) <span class="icon">▼</span>
+      </div>
+      <div class="product-body">
+        <div class="product-details">
+          <div class="product-price">தயவுசெய்து அழைக்கவும்</div>
+          <div class="note">Sizes: 4", 6", 8", 9"<br>சரியான விலைக்கு தொடர்பு கொள்ளவும்</div>
+          <div class="order-box">
+            <div class="order-note">
+              உறுதி செய்து விட்டு ஆர்டர் செய்யவும் மற்றும் ஆர்டர் செய்த பிறகு எங்களிடம் இருந்து வரும் தொலைபேசி அழைப்பை தவறாமல் எடுக்கவும்.<br><br>
+              <strong>ஆர்டர் செய்த பிறகு 10 நிமிடத்திற்குள் Order Confirmation message வரவில்லை என்றால் எங்களை தொடர்பு கொள்ளவும்.</strong>
+            </div>
+            <label>Size (Inch)</label>
+            <select id="size-acc">
+              <option value="4 inch">4"</option>
+              <option value="6 inch">6"</option>
+              <option value="8 inch">8"</option>
+              <option value="9 inch">9"</option>
+            </select>
+            <label>Pieces எண்ணிக்கை</label>
+            <input type="number" id="pieces-acc" placeholder="எ.கா. 500" min="1">
+            <label>உங்கள் பெயர்</label>
+            <input type="text" id="name-acc" placeholder="பெயர் எழுதுங்கள்">
+            <label>மொபைல் நம்பர்</label>
+            <input type="tel" id="mobile-acc" placeholder="10 digit number" maxlength="10">
+            <button class="order-btn" onclick="sendOrderACC()">📱 WhatsApp-ல் Order போடு</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hollow Blocks -->
+    <div class="product-item">
+      <div class="product-header" onclick="toggleProduct(this)">
+        ஹாலோ பிளாக் (Hollow Blocks) <span class="icon">▼</span>
+      </div>
+      <div class="product-body">
+        <div class="product-details">
+          <div class="product-price">தயவுசெய்து அழைக்கவும்</div>
+          <div class="note">விவரம் மற்றும் விலை அறிய அழைக்கவும்</div>
+        </div>
+      </div>
+    </div>
+
+    <p style="margin-top:16px; font-size:0.88rem; color:#555; text-align:center;">
+      * விலை தூரம் மற்றும் பொருள் அளவைப் பொறுத்து மாறும். சரியான விலைக்கு அழைக்கவும்.
+    </p>
+  </div>
+
+  <!-- முகவரி + தொடர்பு -->
+  <div class="card contact-bottom">
+    <h2 style="color:white; border-color:#ffd700;">தொடர்புக்கு</h2>
+    <p>📍 முகவரி: நீளத்தநல்லூர் மெயின்ரோடு, அசூர், கும்பகோணம்</p>
+    <p>
+      📞 <a href="tel:+919994341880">+91 99943 41880</a> &nbsp;|&nbsp; <a href="tel:+918489803165">+91 84898 03165</a>
+    </p>
+  </div>
+</div>
+
+<footer>© 2026 VRP Agencies</footer>
+
+<script>
+  function toggleProduct(header) {
+    const item = header.parentElement;
+    document.querySelectorAll('.product-item').forEach(el => {
+      if (el !== item) el.classList.remove('active');
+    });
+    item.classList.toggle('active');
+  }
+
+  function validate(name, mobile) {
+    if (!name || name.trim() === "") {
+      alert("தயவுசெய்து உங்கள் பெயரை எழுதுங்கள்");
+      return false;
+    }
+    if (!mobile || !/^\d{10}$/.test(mobile.trim())) {
+      alert("சரியான 10 இலக்க மொபைல் நம்பரை உள்ளிடவும்");
+      return false;
+    }
+    return true;
+  }
+
+  function openWhatsApp(message) {
+    const phone = "918489803165";
+    const encodedText = encodeURIComponent(message);
+
+    const schemeUrl = "whatsapp://send?phone=" + phone + "&text=" + encodedText;
+    const intentNormal = "intent://send?phone=" + phone + "&text=" + encodedText + "#Intent;scheme=whatsapp;package=com.whatsapp;end";
+    const intentBusiness = "intent://send?phone=" + phone + "&text=" + encodedText + "#Intent;scheme=whatsapp;package=com.whatsapp.w4b;end";
+    const webUrl = "https://api.whatsapp.com/send?phone=" + phone + "&text=" + encodedText;
+
+    const ua = navigator.userAgent || "";
+    const isAndroid = /Android/i.test(ua);
+    const isIOS = /iPhone|iPad|iPod/i.test(ua);
+
+    if (isAndroid) {
+      window.location.href = intentNormal;
+      setTimeout(function() { window.location.href = intentBusiness; }, 600);
+      setTimeout(function() { window.location.href = schemeUrl; }, 1200);
+      setTimeout(function() { window.location.href = webUrl; }, 2000);
+    } else if (isIOS) {
+      window.location.href = schemeUrl;
+      setTimeout(function() { window.location.href = webUrl; }, 1500);
+    } else {
+      window.open(webUrl, "_blank");
+    }
+  }
+
+  function sendOrder(productName, qtyId, nameId, mobileId) {
+    const qty = document.getElementById(qtyId).value;
+    const name = document.getElementById(nameId).value.trim();
+    const mobile = document.getElementById(mobileId).value.trim();
+
+    if (!validate(name, mobile)) return;
+
+    const message = "*VRP Agencies - புதிய ஆர்டர்*\n\n" +
+      "பொருள்: " + productName + "\n" +
+      "அளவு: " + qty + "\n" +
+      "பெயர்: " + name + "\n" +
+      "மொபைல்: " + mobile + "\n\n" +
+      "தயவுசெய்து விலையை உறுதிப்படுத்தி அழைக்கவும்.";
+
+    openWhatsApp(message);
+  }
+
+  function sendOrderCement() {
+    const qty = document.getElementById("qty-cement").value.trim();
+    const name = document.getElementById("name-cement").value.trim();
+    const mobile = document.getElementById("mobile-cement").value.trim();
+
+    if (!validate(name, mobile)) return;
+    if (!qty || isNaN(qty) || Number(qty) < 1) {
+      alert("தயவுசெய்து சரியான பை எண்ணிக்கையை உள்ளிடவும் (குறைந்தது 1)");
+      return;
+    }
+
+    const message = "*VRP Agencies - புதிய ஆர்டர்*\n\n" +
+      "பொருள்: சிமெண்ட் (Cement)\n" +
+      "பை எண்ணிக்கை: " + qty + "\n" +
+      "பெயர்: " + name + "\n" +
+      "மொபைல்: " + mobile + "\n\n" +
+      "தயவுசெய்து விலையை உறுதிப்படுத்தி அழைக்கவும்.";
+
+    openWhatsApp(message);
+  }
+
+  function sendOrderBag(productName, qtyId, nameId, mobileId, rate) {
+    const qty = document.getElementById(qtyId).value.trim();
+    const name = document.getElementById(nameId).value.trim();
+    const mobile = document.getElementById(mobileId).value.trim();
+
+    if (!validate(name, mobile)) return;
+    if (!qty || isNaN(qty) || Number(qty) < 1) {
+      alert("தயவுசெய்து சரியான மூட்டை எண்ணிக்கையை உள்ளிடவும் (குறைந்தது 1)");
+      return;
+    }
+
+    const total = Number(qty) * rate;
+
+    const message = "*VRP Agencies - புதிய ஆர்டர் (மூட்டை)*\n\n" +
+      "பொருள்: " + productName + "\n" +
+      "மூட்டை எண்ணிக்கை: " + qty + "\n" +
+      "ஒரு மூட்டை விலை: ₹" + rate + "\n" +
+      "மொத்தம் (தோராயம்): ₹" + total + "\n" +
+      "பெயர்: " + name + "\n" +
+      "மொபைல்: " + mobile + "\n\n" +
+      "தயவுசெய்து விலையை உறுதிப்படுத்தி அழைக்கவும்.";
+
+    openWhatsApp(message);
+  }
+
+  function sendOrderJally() {
+    const type = document.getElementById("type-jally").value;
+    const qty = document.getElementById("qty-jally").value;
+    const name = document.getElementById("name-jally").value.trim();
+    const mobile = document.getElementById("mobile-jally").value.trim();
+
+    if (!validate(name, mobile)) return;
+
+    const message = "*VRP Agencies - புதிய ஆர்டர்*\n\n" +
+      "பொருள்: ஜல்லி (Jally)\n" +
+      "வகை: " + type + "\n" +
+      "அளவு: " + qty + "\n" +
+      "பெயர்: " + name + "\n" +
+      "மொபைல்: " + mobile + "\n\n" +
+      "தயவுசெய்து விலையை உறுதிப்படுத்தி அழைக்கவும்.";
+
+    openWhatsApp(message);
+  }
+
+  function sendOrderBricks() {
+    const load = document.getElementById("qty-bricks").value;
+    const pieces = document.getElementById("pieces-bricks").value.trim();
+    const name = document.getElementById("name-bricks").value.trim();
+    const mobile = document.getElementById("mobile-bricks").value.trim();
+
+    if (!validate(name, mobile)) return;
+
+    let qtyText = "Load: " + load;
+    if (pieces) {
+      qtyText += "\nPieces: " + pieces;
+    }
+
+    const message = "*VRP Agencies - புதிய ஆர்டர்*\n\n" +
+      "பொருள்: செங்கல் (Bricks)\n" +
+      qtyText + "\n" +
+      "பெயர்: " + name + "\n" +
+      "மொபைல்: " + mobile + "\n\n" +
+      "தயவுசெய்து விலையை உறுதிப்படுத்தி அழைக்கவும்.";
+
+    openWhatsApp(message);
+  }
+
+  function sendOrderACC() {
+    const size = document.getElementById("size-acc").value;
+    const pieces = document.getElementById("pieces-acc").value.trim();
+    const name = document.getElementById("name-acc").value.trim();
+    const mobile = document.getElementById("mobile-acc").value.trim();
+
+    if (!validate(name, mobile)) return;
+    if (!pieces || pieces <= 0) {
+      alert("Pieces எண்ணிக்கையை உள்ளிடவும்");
+      return;
+    }
+
+    const message = "*VRP Agencies - புதிய ஆர்டர்*\n\n" +
+      "பொருள்: ஏ.சி. பிளாக் (ACC Block)\n" +
+      "Size: " + size + "\n" +
+      "Pieces: " + pieces + "\n" +
+      "பெயர்: " + name + "\n" +
+      "மொபைல்: " + mobile + "\n\n" +
+      "தயவுசெய்து விலையை உறுதிப்படுத்தி அழைக்கவும்.";
+
+    openWhatsApp(message);
+  }
+</script>
+</body>
+</html>
